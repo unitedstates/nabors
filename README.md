@@ -24,12 +24,30 @@ The book has a copyright notice at the start (listing Nabors as the copyright ho
 Details
 -------
 
-The table in this repository lists bills and joint resolutions which became law from the 1st Congress (1789) through the 57th Congress (1903).
+[table.csv](table.csv) lists bills and joint resolutions which became law from the 1st Congress (1789) through the 57th Congress (1903). The columns are:
+
+* `nabors-page`: The page number on which this row of information occurs in Nabors's book.
+
+* `congress`: The number of the Congress in which the bill was introduced.
+
+* `slip-chapter` and `slip-number`: The public law or public resolution chapter and number for citation as a slip law. Chapter numbers were assigned chronologically to bills and joint resolutions as they were enacted. Since private laws were omitted from the table and the table is ordered by the Statutes at Large, in which resolutions follow bills, chapter numbers skip around.
+
+* `stat-volume`, `stat-page-start`, and `stat-page-end`: The volume of the Statutes at Large and the page range that this bill or resolution appears at, for forming a "X Stat Y" citation.
+
+* `date`: The date of enactment of the statute.
+
+* `bill-type` and `bill-number`: The bill or resolution number corresponding to the statute. `bill-type` is one of `HR` or `S` (for bills) or `HJRES` or `SJRES` (for resolutions). (Note that from the 29th Congress, 2nd session through the 55th (House) and 56th (Senate) Congresses these were denoted simply H. Res. and S.Res., but they were in fact joint resolutions.) There are a number of oddities related to bill numbering --- see below. 
+
+* `has-note`: Whether Nabors marked the row with an asterisk (see Nabors's [Notes](pages/notes.md)).
 
 Files inside
 ------------
 
-In this repository you'll find OCR'd text for:
+In this repository you'll find a CSV file containing the correspondence table between bills and statutes:
+
+* [table.csv](table.csv) (pages 1-428) (IN PROGRESS)
+
+And OCR'd text for:
 
 * [title page](pages/title-page.md)
 * [copyright page](pages/copyright-page.md)
@@ -83,6 +101,9 @@ I had Nabors's book scanned, and then I OCR'd the resulting PDF:
 		| perl -n -e '@_ = split(/ +/); printf "%03d %03d\n", $_[1], $_[2];' \
 		> page-images.txt 
 
+	# Make thumbnails of all of the pages.
+	cat page-images.txt | bash -c 'while read PAGE IMG; do convert image-$IMG.pbm -negate -resize 500 -depth 2 page-$PAGE.png; done'
+
 	# Run tesseract on each page.
 	# This generates "page-###.txt" files.
 	# psm=6 means "Assume a single uniform block of text." It roughly
@@ -99,3 +120,12 @@ I had Nabors's book scanned, and then I OCR'd the resulting PDF:
 	cat page-019.txt > users-guide.md
 	cat page-{449..458}.txt > notes.md
 	cat page-{459..460}.txt > bibliography.md
+
+The pages saved as Markdown were manually reviewed/corrected by me.
+
+I then re-OCR'd the text restricting tesseract's output to a small set of characters to try to get more consistent output for the table, and ran a scraping script to turn the raw text into CSV format:
+
+	cat page-images.txt | bash -c 'while read PAGE IMG; do echo $PAGE; tesseract $IMG.pbm -psm 6 page-$PAGE -c tessedit_char_whitelist=0123456789-HSJRes./*PUBCACTSRSUTNSTHCNGR; done'
+
+	python3 parse_table.py page- > table.csv
+
