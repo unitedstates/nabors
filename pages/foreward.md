@@ -1,4 +1,5 @@
 Foreword
+========
 
 For the legislative historian, now conditioned to the
 existence of convenient means of tracing U.S. legislative history
@@ -6,12 +7,12 @@ from current Congressional calendars, many official catalogs or
 the almost countless checklists and services that have been
 published over the past 25 years, it seems scarcely credible
 that 32 volumes of the U.S. Statutes at Large, published from
-1789 to 1903, contained no references to statutory bill numbers"
+1789 to 1903, contained no references to statutory bill numbers — 
 an essential element in identifying the progress of legislation.
 Now that Congress can routinely introduce as many as 30,000
-pieces of legislation in a two—year session, the bill number has
+pieces of legislation in a two-year session, the bill number has
 assumed great significance as the usual means of tracking current
-status into law. I
+status into law.
 
 But for the historian seeking a description of legislative
 intent for laws enacted during the first century of the
@@ -26,11 +27,9 @@ checklist will reveal, bill numbers for this early period could
 be obtained only by tedious and generally inconvenient reference
 to the official Journals of the proceedings of the Senate and
 House of Representatives. Having now checked all of these
-reference for us from these journals and other little—noticed
+reference for us from these journals and other little-noticed
 sources, Mr. Nabors makes a fundamental contribution to the job
 of researching legislation enacted from 1789 to 1903.
-
-vii
 
 This work was very much inspired by necessity and by its
 author's fortunate proximity to an incomparable collection of
@@ -51,11 +50,10 @@ It has been at least ten years in preparation. The time that
 it will now save historians, librarians and archivists probably
 cannot be measured.
 
-Ellen P. Mahar J. S. Ellenberger
+Ellen P. Mahar  
+Librarian, Covington & Burling  
+Washington, D.C.  
 
-Librarian, Covington Librarian, Shearman
-
-G Burling 8 Sterling
-Washington, D.C. New York City
-viii
-
+J. S. Ellenberger  
+Librarian, Shearman & Sterling  
+New York City  

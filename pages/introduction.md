@@ -1,4 +1,5 @@
 Introduction
+============
 
 This key is intended to provide a systematic reference to
 the numbers of the U.S. Congressional bills and joint
@@ -15,9 +16,9 @@ which always has been used, the only identifiers given the laws
 in the Statutes at Large were the chapter numbers. These were
 assigned in one sequence to all laws upon receipt and the
 numbering was started anew each session. Therefore, when the
-two categories —- public and private -- were classified and
-separated for publication in the Statutes at Large, disconti—
-nuity occurred in the number sequence of each. Since this
+two categories — public and private — were classified and
+separated for publication in the Statutes at Large, discontinuity
+occurred in the number sequence of each. Since this
 checklist includes only public laws you will find breaks in the
 numbering sequence of the Chapters caused by the omission of the
 private laws.
@@ -29,13 +30,10 @@ by Reorganization Plan No. 20. (Federal Register, Volume 15,
 Number 101, May 25, 1950, p. 3178).
 
 Prior to 1950 no rules determined the division of laws into
-private or public acts. There are, however, certain considera-
-tions which haVe been followed in order to determine the class
-into which a law should be placed. In arriving at the con-
-clusion, an act was always examined and considered as a unit,
-
-xi
-
+private or public acts. There are, however, certain considerations
+which have been followed in order to determine the class
+into which a law should be placed. In arriving at the conclusion,
+an act was always examined and considered as a unit,
 rather than paragraph by paragraph, in order to identify the
 intent of Congress when the act was passed. That determination
 was based upon the debate of the legislation as it appeared in
@@ -61,7 +59,7 @@ of bills apparently started during the 15th Congress. It seems
 that beginning with the congress House bills were numbered
 continuously through a congress, and remained alive beyond the
 first session. Until the 30th Congress, Senate bills were
-numbered beginning with l for each session and appear to have
+numbered beginning with 1 for each session and appear to have
 died at the end of the session". (1)
 
 (l) Schmeckebier, Lawrence F. Government publications and
@@ -86,8 +84,8 @@ are excellent sources for tracing legislative histories,
 especially for the period from 1789 to 1903. These were the
 sources used in compiling this checklist.
 
-The House and Senate Journals are also excellent supple—
-mentary tools to be used with the Indexes to the debates as
+The House and Senate Journals are also excellent supplementary
+tools to be used with the Indexes to the debates as
 explained in the "Users Guide" to this checklist.
 
 The difficulties, caused by the omission of bill numbers
@@ -105,5 +103,3 @@ Legislative histories can be essential to any individualwho
 needs to understand the statutory intent and meaning of the law.
 
 Eugene Nabors
-xiii
-
