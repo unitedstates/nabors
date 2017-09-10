@@ -8,16 +8,27 @@ html, body {
   justify-content: space-between;
 }
 
-.child {
-  width: 50%;
+.img-cont {
+  margin: 20px auto;
+  width: 60%;
+}
+
+iframe {
+  height: 400px;
+  position: relative;
+  left: -80px;
+  width: 100%;
 }
 
 .text-cont {
   font-size: 17px;
   font-family: monospace;
+  height: 400px;
   line-height: 21px;
-  margin-top: 124px;
+  margin: 20px auto;
+  overflow: scroll;
   white-space: pre;
+  width: 60%;
 }
 
 .text {

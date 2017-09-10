@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
+  <title>Mturk HIT</title>
   <style>
     {{ css }}
   </style>
@@ -23,56 +23,55 @@
 
     <div class="instructions">
       <p>
-        The column on the left contains a scanned page from a book of
-        legislative reference data. The column on the right contains the OCR
+        The window on top contains a scanned page from a book of
+        legislative reference data. The window on the bottom contains the OCR
         representation of this data: what the computer thinks it is. This task
         is to check if they match.
       </p>
       <p>
         For each row in the right column there is a set of radio buttons and a
         checkbox. For each row:
-        <ol>
-          <li>Look for the corresponding row in the image to the left</li>
-          <li>
-            Determine if the line in the right column matches, ie has
-            <b>identical</b> values for each group of text. For this purpose,
-            you can ignore whitespace/empty space.
-          </li>
-          <li>
-            If the lines match, click the first radio button, "Accurate"/"A"
-          </li>
-          <li>
-            If the lines don't match, click the second radio button,
-            "Inaccurate"/"I"
-          </li>
-        </ol>
       </p>
+      <ol>
+        <li>Look for the corresponding row in the image to the top</li>
+        <li>
+          Determine if the line in the right column matches, ie has
+          <b>identical</b> values for each group of text. For this purpose,
+          you can ignore whitespace/empty space.
+        </li>
+        <li>
+          If the lines match, click the first radio button,
+          &quot;Accurate&quot;/&quot;A&quot;
+        </li>
+        <li>
+          If the lines don't match, click the second radio button,
+          &quot;Inaccurate&quot;/&quot;I&quot;
+        </li>
+      </ol>
       <p>
         If for some reason the line is unclear, or it contains the word ERROR,
-        click the checkbox to indicate that ("?"). The checkbox is only for
-        lines that can't be determined to be "Accurate" or "Inaccurate".
+        click the checkbox to indicate that (&quot;?&quot;). The checkbox is
+        only for lines that can't be determined to be &quot;Accurate&quot; or
+        &quot;Inaccurate&quot;.
       </p>
       <p>
-        Ignore all page and section headers, eg "RESOLUTIONS OF THE
-        TWENTY-THIRD CONGRESS". The lines on the right might not always visually
-        line up with those on the left, and that's okay and should be ignored.
+        Ignore all page and section headers, eg &quot;RESOLUTIONS OF THE
+        TWENTY-THIRD CONGRESS&quot;. Ignore all vertical spacing.
       </p>
     </div>
 
     <div id="error-incomplete" class="error" style="display: none;">
-      You must complete every row on the right side.
+      You must complete every row in the bottom window.
     </div>
 
-    <div class="container">
-      <div class="child">
-        <img src="{{ page['image_url'] }}">
-      </div>
-      <!-- For .child.text-cont, the spacing is intentionally very strange
-           because this div has white-space: pre -->
-      <div class="child text-cont">
-                                                         <span class="label">A</span><span class="label">I</span><span class="label">?</span>{% for line in page['lines'] %}<div class="text">{{ line }}<input type="radio" name="accuracy_{{loop.index0}}" value="accurate"><input type="radio" name="accuracy_{{loop.index0}}" value="inaccurate"><input type="checkbox" name="unclear_{{loop.index0}}"></div>{% endfor %}
+    <div class="img-cont">
+      <iframe src="{{ page['image_url'] }}"></iframe>
+    </div>
+    <!-- For .text-cont, the spacing is intentionally very strange
+         because this div has white-space: pre -->
+    <div class="text-cont">
+                                                           <span class="label">A</span><span class="label">I</span><span class="label">?</span>{% for line in page['lines'] %}<div class="text">{{ line }}<input type="radio" name="accuracy_{{loop.index0}}" value="accurate"><input type="radio" name="accuracy_{{loop.index0}}" value="inaccurate"><input type="checkbox" name="unclear_{{loop.index0}}"></div>{% endfor %}
 <div class="submit-cont"><input type="submit" id="submitButton" value="Submit"></div>
-      </div>
     </div>
   </form>
 

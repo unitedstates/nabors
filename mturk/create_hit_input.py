@@ -42,7 +42,7 @@ for page, pagelines in lines.items():
   }
   for line in pagelines:
     if len(line) != 11 or line[-1] == 'ERROR':
-      nextline = ''
+      nextline = 'ERROR'.ljust(58)
     else:
       stat_page = line[5]
       if line[6]:
@@ -50,7 +50,7 @@ for page, pagelines in lines.items():
       try:
         nextline = (
           line[2].rjust(4) + line[3].rjust(10) + line[4].rjust(10) +
-          stat_page.rjust(10) + unformat_date(line[7]).rjust(10) + '  ' +
+          stat_page.rjust(10) + unformat_date(line[7]).rjust(12) + '  ' +
           line[8] + line[9].rjust(10 - len(line[8]))
         )
       except (IndexError, Exception):
