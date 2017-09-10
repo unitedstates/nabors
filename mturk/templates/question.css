@@ -33,8 +33,21 @@ html, body {
   margin-right: 15px;
 }
 
-.instructions {
-  border: 1px solid black;
+.instructions,
+.error {
   margin: 10px 50px 0;
   padding: 10px;
+}
+
+.instructions {
+  border: 1px solid black;
+}
+
+.submit-cont {
+  text-align: center;
+}
+
+.error {
+  background-color: pink;
+  border: 1px solid red;
 }
