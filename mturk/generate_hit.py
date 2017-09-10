@@ -1,5 +1,6 @@
-import csv
 from collections import defaultdict
+import csv
+import sys
 
 def unformat_date(date):
   try:
@@ -8,13 +9,23 @@ def unformat_date(date):
     print(date, len(date))
     raise
 
-output = csv.writer(open('hit_input.csv', 'w', newline=''))
+in_path = 'table.csv'
+if len(sys.argv) >= 2:
+  in_path = sys.argv[1]
+
+out_path = 'hit_input.csv'
+if len(sys.argv) == 3:
+  out_path = sys.argv[2]
+
+print('input: %s, output: %s' % (in_path, out_path), file=sys.stderr)
+
+output = csv.writer(open(out_path, 'w', newline=''))
 header_row = ['image_url']
 header_row.extend('line_%s' % i for i in range(43))
 output.writerow(header_row)
 
 lines = defaultdict(lambda: [])
-for row in csv.reader(open('table.csv')):
+for row in csv.reader(open(in_path)):
   try:
     int(row[0])
     lines[row[0]].append(row)
