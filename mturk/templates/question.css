@@ -10,25 +10,25 @@ html, body {
 
 .img-cont {
   margin: 20px auto;
-  width: 60%;
+  width: 700px;
 }
 
 iframe {
   height: 400px;
   position: relative;
-  left: -80px;
+  left: -90px;
   width: 100%;
 }
 
 .text-cont {
-  font-size: 17px;
+  font-size: 16px;
   font-family: monospace;
   height: 400px;
   line-height: 21px;
   margin: 20px auto;
   overflow: scroll;
   white-space: pre;
-  width: 60%;
+  width: 660px;
 }
 
 .text {
