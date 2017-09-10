@@ -4,6 +4,8 @@ import sys
 import boto3
 import jinja2
 
+import render
+
 region_name = 'us-east-1'
 aws_access_key_id = os.environ.get('AWS_ACCESS_KEY_ID')
 aws_secret_access_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
@@ -21,9 +23,8 @@ endpoint_url = 'https://mturk-requester-sandbox.us-east-1.amazonaws.com'
 # The contents of the HTML template are replaced with values from the
 # hit_input.jsonlines file. Then, this entire HTML document is inserted into the
 # XML template, as the contents of an Amazon Mturk "HTMLQuestion" element
-question_xml_tmpl = jinja2.Template(open('question.xml').read())
-question_html_tmpl = jinja2.Template(open('question.html').read())
-question_html = question_html_tmpl.render()
+question_xml_tmpl = jinja2.Template(open('templates/question.xml').read())
+question_html = render.render(1)
 question_xml = question_xml_tmpl.render(html_data=question_html)
 
 client = boto3.client(
@@ -47,7 +48,7 @@ resp = client.create_hit(
                'task is to verify that the OCR data is either Accurate or '
                'Inaccurate.'),
   Question=question_xml,
-  UniqueRequestToken='NABORS-0001'
+  UniqueRequestToken='NABORS-0002'
 )
 
 print(resp)

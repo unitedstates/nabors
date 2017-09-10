@@ -1,1 +1,3 @@
-hit_input.csv
+hit_input.jsonlines
+mturk/hit_input.jsonlines
+mturk/__pycache__
