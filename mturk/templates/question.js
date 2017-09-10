@@ -6,8 +6,6 @@ $(function() {
       if ($('input[name=accuracy_' + i + ']:checked').length < 1 && $('input[name=unclear_' + i + ']:checked').length < 1) {
         $('#error-incomplete').show();
         return false;
-      } else {
-        window.console.log($('input[name=accuracy_' + i + ']:checked').length < 1, $('input[name=unclear_' + i + ']:checked').length < 1)
       }
     }
   });
