@@ -5,13 +5,6 @@
 import sys, re, csv
 
 def main():
-	# If this is set to true, HJR will pass untouched and not be converted
-	# to HJRES. Similarly for SJR and "H Res."/"S Res.". This is needed for
-	# Mturk validation.
-	preserve_hsres = False
-	if len(sys.argv) > 2 and sys.argv[2] == '--preserve-hsres':
-		preserve_hsres = True
-
 	w = csv.writer(sys.stdout)
 	w.writerow([
 		"nabors-page",
@@ -81,25 +74,13 @@ def main():
 					elif re.match("^[S583s]$", bill_type):
 						bill_type = "S"
 					elif re.match("^HJR$", bill_type):
-						if preserve_hsres:
-							bill_type = "HJR"
-						else:
-							bill_type = "HJRES"
+						bill_type = "HJR"
 					elif re.match("^[S583s]JR$", bill_type):
-						if preserve_hsres:
-							bill_type = "SJR"
-						else:
-							bill_type = "SJRES"
+						bill_type = "SJR"
 					elif re.match("^H ?Re[sS]$", bill_type):
-						if preserve_hsres:
-							bill_type = "H Res."
-						else:
-							bill_type = "HJRES"
+						bill_type = "H Res."
 					elif re.match("^[S583s] ?R(e[sS]?)?$", bill_type):
-						if preserve_hsres:
-							bill_type = "S Res."
-						else:
-							bill_type = "SJRES"
+						bill_type = "S Res."
 					else:
 						raise ValueError()
 
