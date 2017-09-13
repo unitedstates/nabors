@@ -36,6 +36,9 @@ client = boto3.client(
 # Five random pages for testing
 for page_num in range(250, 256):
   question_html = render.render(page_num)
+
+# For production upload:
+# for question_html in render.render_all()
   question_xml = question_xml_tmpl.render(html_data=question_html)
   resp = client.create_hit(
     MaxAssignments=2,
@@ -51,4 +54,4 @@ for page_num in range(250, 256):
                  'or Inaccurate.'),
     Question=question_xml,
     UniqueRequestToken='NABORS-%s' % str(page_num).rjust(4, '0')
-)
+  )
