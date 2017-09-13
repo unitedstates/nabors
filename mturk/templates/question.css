@@ -1,0 +1,64 @@
+html, body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.img-cont {
+  margin: 20px auto;
+  width: 700px;
+}
+
+iframe {
+  height: 400px;
+  position: relative;
+  left: -70px;
+  width: 100%;
+}
+
+.text-cont {
+  font-size: 16px;
+  font-family: monospace;
+  height: 400px;
+  line-height: 21px;
+  margin: 20px auto;
+  overflow: scroll;
+  white-space: pre;
+  width: 660px;
+}
+
+.text {
+  margin-bottom: 1.25px;
+}
+
+.text input {
+  margin-left: 10px;
+}
+
+.label {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.instructions,
+.error {
+  margin: 10px 50px 0;
+  padding: 10px;
+}
+
+.instructions {
+  border: 1px solid black;
+}
+
+.submit-cont {
+  text-align: center;
+}
+
+.error {
+  background-color: pink;
+  border: 1px solid red;
+}
