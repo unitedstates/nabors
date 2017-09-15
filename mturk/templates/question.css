@@ -2,37 +2,24 @@ html, body {
   margin: 0;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.img-cont {
-  margin: 20px auto;
-  width: 700px;
-}
-
-iframe {
-  height: 400px;
-  position: relative;
-  left: -70px;
+img {
   width: 100%;
+  border: 1px solid #333;
 }
 
 .text-cont {
+  padding-top: 100px;
+  padding-left: 1em;
   font-size: 16px;
+  font-size: 1.1vw;
   font-family: monospace;
-  height: 400px;
-  line-height: 21px;
-  margin: 20px auto;
-  overflow: scroll;
+  line-height: 145%;
+}
+.text-cont * {
   white-space: pre;
-  width: 660px;
 }
 
 .text {
-  margin-bottom: 1.25px;
 }
 
 .text input {
